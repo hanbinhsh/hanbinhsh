@@ -1,0 +1,36 @@
+name: Generate Snake
+
+on:
+  # 每天 00:00 (UTC) 自动运行
+  schedule:
+    - cron: "0 0 * * *"
+  # 支持手动触发
+  workflow_dispatch:
+  # 当 README 修改时也触发
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      # 生成贪吃蛇 SVG
+      - name: generate github-contribution-grid-snake.svg
+        uses: platane/snk/svg-only@v3
+        with:
+          github_user_name: hanbinhsh
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          
+      # 将生成的图片上传到分支 (output branch)
+      - name: push github-contribution-grid-snake.svg to the output branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
+          commit_message: Update snake animations
