@@ -1,15 +1,20 @@
 name: Generate Snake
 
 on:
-  # 每天 00:00 (UTC) 自动运行
   schedule:
     - cron: "0 0 * * *"
-  # 支持手动触发
   workflow_dispatch:
-  # 当 README 修改时也触发
   push:
     branches:
       - main
+
+# 修复 Error 128：赋予 Actions 推送代码到分支的写入权限
+permissions:
+  contents: write
+
+# 消除 Node.js 警告：强制 Actions 运行在 Node.js 24 环境下
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   generate:
@@ -17,7 +22,6 @@ jobs:
     timeout-minutes: 10
     
     steps:
-      # 生成贪吃蛇 SVG
       - name: generate github-contribution-grid-snake.svg
         uses: platane/snk/svg-only@v3
         with:
@@ -26,7 +30,6 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
           
-      # 将生成的图片上传到分支 (output branch)
       - name: push github-contribution-grid-snake.svg to the output branch
         uses: peaceiris/actions-gh-pages@v3
         with:
