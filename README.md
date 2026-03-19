@@ -3,12 +3,12 @@
 </p>
 
 <p align="center">
-<a>"Crystalizing moments in the cycle of code — between exploration and permanence."</a>
+  <em>"Crystalizing moments in the cycle of code — between exploration and permanence."</em>
 </p>
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2000&pause=1000&color=36BCF7&center=true&vCenter=true&width=500&lines=Where+am+I+leaving+into...?,;I desire to keep standing here.;Building+Qt%2FPySide+GUI+Applications;Developing+AI+Art+%26+LoRA+Tools;Exploring+Live2D+%26+Game+Modding" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2000&pause=1000&color=36BCF7&center=true&vCenter=true&width=500&lines=Where+am+I+leaving+into...?;I+desire+to+keep+standing+here.;Building+Qt%2FPySide+GUI+Applications;Developing+AI+Art+%26+LoRA+Tools;Exploring+Live2D+%26+Game+Modding" alt="Typing SVG" />
   </a>
 </p>
 
